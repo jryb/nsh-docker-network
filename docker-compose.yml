@@ -1,0 +1,25 @@
+version: '3'
+services:
+  sf:
+    build: nsh-sf
+    container_name: sf-container
+    networks:
+      nsh-dp-network:
+        ipv4_address: 172.20.20.3
+    command: tail -f /dev/null
+  sff:
+    build: nsh-sff
+    container_name: sff-container
+    ports:
+      - "8080:8080"
+    networks:
+      nsh-dp-network:
+        ipv4_address: 172.20.20.2
+    command: tail -f /dev/null
+networks:
+  nsh-dp-network:
+    ipam:
+      config:
+        - subnet: 172.20.20.0/24
+volumes:
+  tags:
