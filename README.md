@@ -37,6 +37,6 @@ This will run the conatiners in defualt mode.  If you wish to bring up the topol
 Once this is done you can log into each container manually and start up the sf or sff for debugging:
 
     docker-compose up -d
-    Jeffs-MBP-2:nsh-docker-network jeff$ docker exec -i -t sf-container bash
+    docker exec -i -t sf-container bash
 
 
